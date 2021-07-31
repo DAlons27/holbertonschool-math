@@ -6,7 +6,6 @@
  * struct complex - tipo complejo definido
  * @re: numero real
  * @im: numero imaginario
- * @fun: la funcion asociada
  */
 typedef struct complex
 {
