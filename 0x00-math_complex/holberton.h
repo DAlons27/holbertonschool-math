@@ -1,16 +1,16 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
-#include <stdio.h>
 
+#include <stdarg.h>
 /**
- * struct complex - tipo complejo definido
+ * struct number_complex - tipo de impresión y función de impresión
  * @re: numero real
  * @im: numero imaginario
  */
-typedef struct complex
+typedef struct number_complex
 {
-int re;
-int im;
+	double re;
+	double im;
 } complex;
 
 void display_complex_number(complex c);
