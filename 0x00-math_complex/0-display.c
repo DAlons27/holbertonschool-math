@@ -1,18 +1,33 @@
 #include "holberton.h"
-/**
- * display_complex_number - función que muestra los números complejos
- * @c: Los numeros complejos
- */
+#include <stdio.h>
 
+/**
+ * display_complex_number - display the complex numberss
+ * @c: structure of a complex number
+ * Return: void
+ */
 void display_complex_number(complex c)
 {
-	if (c.im > 0)
-		printf("%d + %di\n", c.re, c.im);
-	else if (c.im < 0)
+	if (c.re == 0)
 	{
-		c.im = -c.im;
-		 printf("%d - %di\n", c.re, c.im);
+		if (c.im < 0)
+			printf("- %.9gi\n", c.im * (-1));
+		else if (c.im == 0)
+			printf("0\n");
+		else
+			printf("%.9g\n", c.im);
 	}
 	else
-		  printf("%d\n", c.re);
+	{
+		if (c.im < -1)
+			printf("%.9g - %.9gi\n", c.re, c.im * (-1));
+		else if (c.im == -1)
+			printf("%.9g - i\n", c.re);
+		else if (c.im == 0)
+			printf("%.9g\n", c.re);
+		else if (c.im == 1)
+			printf("%.9g + i\n", c.re);
+		else
+			printf("%.9g + %.9gi\n", c.re, c.im);
+	}
 }
